@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const subscriptionSchema = new mongoose.SchemaType({
+const subscriptionSchema = new mongoose.Schema({
     name:{
         type:String,
         required:[true,'Subscription Name is required'],
@@ -42,7 +42,7 @@ const subscriptionSchema = new mongoose.SchemaType({
         required:true,
         validate:{
             validator:(value)=>value<=new Date(),
-            message:'Start date must be in hte past'
+            message:'Start date must be in the past'
         }
     },
     renewalDate:{

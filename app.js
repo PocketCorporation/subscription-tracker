@@ -8,8 +8,15 @@ import subscriptionRouter from './routes/subscription.routes.js'
 import connectToDatabase from './database/mongodb.js'
 import errorMiddleware from './middleware/error.middleware.js'
 import cookieParser from 'cookie-parser'
+import cors from 'cors'
+
 
 const app = express()
+app.use(
+    cors({
+        origin:"*"
+    })
+)
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
